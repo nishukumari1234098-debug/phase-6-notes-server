@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root { --ink:#172321; --muted:#6e7d78; --paper:#f4f2ec; --panel:#fffdf8; --line:#dfe3da; --accent:#e96b4f; --accent-dark:#bd4d37; --mint:#dcebe1; --shadow:0 24px 60px rgba(41,57,49,.08); }
+* { box-sizing:border-box; }
+body { min-height:100vh; margin:0; color:var(--ink); background:var(--paper); font-family:'Manrope',sans-serif; background-image:radial-gradient(rgba(23,35,33,.08) .7px,transparent .7px); background-size:18px 18px; }
+.page-shell { width:min(1120px,calc(100% - 48px)); margin:0 auto; padding:64px 0 30px; }
+.hero { display:flex; align-items:center; gap:18px; margin-bottom:42px; }
+.brand-mark { display:grid; width:56px; height:56px; place-items:center; color:#fffdf8; background:var(--accent); font-family:'DM Mono',monospace; font-size:1.3rem; box-shadow:7px 7px 0 var(--mint); transform:rotate(-4deg); }
+.eyebrow,.shortcut,.live-dot,.page-footer,.helper-text { font-family:'DM Mono',monospace; letter-spacing:.08em; text-transform:uppercase; }
+.eyebrow { margin:0 0 8px; color:var(--accent-dark); font-size:.68rem; font-weight:500; }
+h1,h2,p { margin-top:0; }
+h1 { margin-bottom:6px; font-size:clamp(2rem,5vw,3.75rem); line-height:.98; letter-spacing:-.05em; }
+.hero-copy { margin:0; color:var(--muted); font-size:.95rem; }
+.workspace { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:24px; }
+.composer-panel,.notes-panel { min-width:0; padding:30px; background:var(--panel); border:1px solid var(--line); box-shadow:var(--shadow); }
+.composer-panel { border-top:4px solid var(--accent); }
+.section-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:30px; }
+h2 { margin-bottom:0; font-size:1.35rem; letter-spacing:-.04em; }
+.shortcut { color:var(--muted); font-size:.63rem; white-space:nowrap; }
+label { display:block; margin:0 0 8px; font-size:.75rem; font-weight:800; }
+input,textarea { width:100%; margin-bottom:22px; padding:14px 0; color:var(--ink); background:transparent; border:0; border-bottom:1px solid var(--line); outline:0; font:inherit; resize:vertical; }
+textarea { min-height:150px; line-height:1.6; }
+input::placeholder,textarea::placeholder { color:#a2aca6; }
+input:focus,textarea:focus { border-color:var(--accent); box-shadow:0 2px 0 var(--accent); }
+.form-footer { display:flex; align-items:center; justify-content:space-between; gap:15px; }
+.helper-text { margin:0; color:var(--muted); font-size:.6rem; line-height:1.5; }
+button { padding:13px 17px; color:#fffdf8; background:var(--ink); border:0; cursor:pointer; font:700 .78rem 'Manrope',sans-serif; transition:background .2s ease,transform .2s ease; }
+button span { margin-left:10px; font-size:1rem; }
+button:hover { background:var(--accent-dark); transform:translateY(-2px); }
+#message { min-height:18px; margin:18px 0 0; color:var(--accent-dark); font-size:.75rem; font-weight:700; }
+.notes-panel { background:rgba(255,253,248,.74); }
+.notes-heading { align-items:center; margin-bottom:20px; }
+.live-dot { display:flex; align-items:center; gap:7px; color:var(--muted); font-size:.6rem; }
+.live-dot::before { width:7px; height:7px; content:''; background:#70a87f; border-radius:50%; }
+#resultContainer { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+#resultContainer > div { min-height:130px; padding:18px; background:var(--mint); border-left:3px solid #8bb49a; animation:reveal .35s ease both; }
+#resultContainer > div p { margin-bottom:10px; line-height:1.5; overflow-wrap:anywhere; }
+#resultContainer > div p:first-child { color:var(--ink); font-size:.9rem; font-weight:800; }
+#resultContainer > div p:last-child { margin-bottom:0; color:#516760; font-size:.8rem; }
+.page-footer { display:flex; justify-content:space-between; gap:20px; padding-top:22px; color:var(--muted); font-size:.6rem; }
+@keyframes reveal { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@media (max-width:760px) { .page-shell { width:min(100% - 28px,560px); padding-top:36px; } .hero { margin-bottom:30px; } .workspace { grid-template-columns:1fr; } .composer-panel,.notes-panel { padding:22px; } #resultContainer { grid-template-columns:1fr; } }
+@media (max-width:420px) { .form-footer,.page-footer { align-items:flex-start; flex-direction:column; } button { width:100%; } }

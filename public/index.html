@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Server Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page-shell">
+        <header class="hero">
+            <div class="brand-mark" aria-hidden="true">N</div>
+            <div>
+                <p class="eyebrow">Your private idea desk</p>
+                <h1>Quick Server Notes</h1>
+                <p class="hero-copy">Capture the thought before it gets away.</p>
+            </div>
+        </header>
+
+        <section class="workspace" aria-label="Notes workspace">
+            <div class="composer-panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">New entry</p>
+                        <h2>Write something down</h2>
+                    </div>
+                    <span class="shortcut">NOTE / 01</span>
+                </div>
+                <form id="notesForm">
+                    <label for="titleName">Title</label>
+                    <input type="text" placeholder="Give your note a name" id="titleName">
+                    <label for="contentMsg">Your note</label>
+                    <textarea id="contentMsg" placeholder="Start writing here..."></textarea>
+                    <div class="form-footer">
+                        <p class="helper-text">Keep it short, keep it useful.</p>
+                        <button type="submit">Save Note <span aria-hidden="true">&#8594;</span></button>
+                    </div>
+                    <p id="message" role="status"></p>
+                </form>
+            </div>
+
+            <section class="notes-panel" aria-labelledby="saved-notes-heading">
+                <div class="section-heading notes-heading">
+                    <div>
+                        <p class="eyebrow">Your collection</p>
+                        <h2 id="saved-notes-heading">Saved Notes</h2>
+                    </div>
+                    <span class="live-dot">LIVE</span>
+                </div>
+                <div id="resultContainer"></div>
+            </section>
+        </section>
+
+        <footer class="page-footer">
+            <span>Built for quick thoughts</span>
+            <span>Stored on your server</span>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
